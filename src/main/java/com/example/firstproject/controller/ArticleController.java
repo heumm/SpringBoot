@@ -37,5 +37,10 @@ public class ArticleController {
         return "";
     }
 
+    @GetMapping("/articles/list")
+    public String showArticles() {
+        return "articles/list";
+    }
+
 
 }
