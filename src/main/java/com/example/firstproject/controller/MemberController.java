@@ -10,11 +10,11 @@ public class MemberController {
 
     @GetMapping("/member/signin")
     public String signIn() {
-        return "members/signin";
+        return "";
     }
 
-    @PostMapping("/member/signup")
+    @GetMapping("/member/signup")
     public String signUp() {
-        return "";
+        return "members/signup";
     }
 }
