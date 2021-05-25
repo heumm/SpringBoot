@@ -1,9 +1,10 @@
 package com.example.firstproject.controller;
 
+import com.example.firstproject.dto.MemberForm;
+import com.example.firstproject.entity.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class MemberController {
@@ -15,9 +16,15 @@ public class MemberController {
     }
 
 
-
     @GetMapping("/member/signup")
-    public String signUp() {
+    public String signUpForm() {
         return "members/signup";
     }
+
+    @PostMapping("member/create")
+    public String createUser(MemberForm form) {
+        Member member = form.toEntity();
+        return "/";
+    }
+
 }

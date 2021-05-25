@@ -14,7 +14,7 @@ import javax.persistence.Id;
 public class Article {
 
     @Id //primary key 어노테이션
-    @GeneratedValue //1, 2, 3 등 자동 부여 어노테이
+    @GeneratedValue //1, 2, 3 등 자동 부여 어노테이션
     private Long id;
 
     @Column
