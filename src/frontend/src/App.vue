@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="menu">
-    <a v-for="a, in menu" :key="a">{{a}}</a>
+    <a v-for="a, in menu" :key="a" :href="a">{{a}}</a>
     <!-- key는 반복문 돌린 요소를 컴퓨터가 구분하기 위해 쓴다. -->
   </div>
 
@@ -33,7 +33,7 @@ export default {
       rooms : roomData,
       modalIsOpen : false,
       // accuseCount : [0, 0, 0],
-      menu : ['Home', 'Shop', 'About'],
+      menu : ['home', 'shop', 'about', 'board'],
       /*
       products : [
           {
