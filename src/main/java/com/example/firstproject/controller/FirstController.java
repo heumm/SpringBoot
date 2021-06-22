@@ -11,22 +11,22 @@ import org.springframework.web.servlet.view.RedirectView;
 @Slf4j
 public class FirstController {
 
-    @GetMapping("/")
-    public RedirectView home() {
-        log.info("home controller home()메소드 호출!");
-        return new RedirectView("/hi");
-    }
+//    @GetMapping("/")
+//    public RedirectView home() {
+//        log.info("home controller home()메소드 호출!");
+//        return new RedirectView("/hi");
+//    }
 
 
-    @GetMapping("/hi")
-    public String niceToMeetyou(Model model) {
-        model.addAttribute("username", "한흠");
-        return "greetings";
-    }
-
-    @GetMapping("/bye")
-    public String seeYouNext(Model model) {
-        model.addAttribute("nickname", "조한흠");
-        return "goodBye";
-    }
+//    @GetMapping("/hi")
+//    public String niceToMeetyou(Model model) {
+//        model.addAttribute("username", "한흠");
+//        return "greetings";
+//    }
+//
+//    @GetMapping("/bye")
+//    public String seeYouNext(Model model) {
+//        model.addAttribute("nickname", "조한흠");
+//        return "goodBye";
+//    }
 }
