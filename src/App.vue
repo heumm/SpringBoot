@@ -1,27 +1,23 @@
 <template>
-  <div>
-    <header></header>
-    <div class="menu">
-      <router-link :to="a" v-for="a in menu" :key="a" >{{a}}</router-link>
-      <!-- key는 반복문 돌린 요소를 컴퓨터가 구분하기 위해 쓴다. -->
+
+  <div class="black-bg" @click="modalIsOpen = false" v-if="modalIsOpen == true">
+    <div class="white-bg">
+      <h4>상세페이지</h4>
+      <p>상세페이지 내용</p>
     </div>
-    <!-- <router-view> -->
-      
-      <div v-for="(product,i) in rooms" :key="i">
-        <img :src="rooms[i].image" @click="modalIsOpen = true" class="room-img">
-        <h4>{{rooms[i].title}}</h4>
-        <p>{{rooms[i].price}} 원</p>
-        <!-- <button v-on:click="increase(i)">허위매물신고</button> <span>신고수 : {{ accuseCount[i] }}</span> -->
-        <!-- v-on:click 또는 @click으로도 가능 --> 
-      </div>
-      <div class="black-bg" @click="modalIsOpen = false" v-if="modalIsOpen == true">
-        <div class="white-bg">
-          <h4>상세페이지</h4>
-          <p>상세페이지 내용</p>
-        </div>
-      </div>
-    <!-- </router-view> -->
-</div>
+  </div>
+  <div class="menu">
+    <router-link v-for="a, in menu" :key="a" to="a">{{a}}</router-link>
+    <!-- key는 반복문 돌린 요소를 컴퓨터가 구분하기 위해 쓴다. -->
+  </div>
+
+  <div v-for="(product,i) in rooms" :key="i">
+    <img :src="rooms[i].image" @click="modalIsOpen = true" class="room-img">
+    <h4>{{rooms[i].title}}</h4>
+    <p>{{rooms[i].price}} 원</p>
+    <!-- <button v-on:click="increase(i)">허위매물신고</button> <span>신고수 : {{ accuseCount[i] }}</span> -->
+    <!-- v-on:click 또는 @click으로도 가능 --> 
+  </div>
 </template>
 
 
@@ -29,8 +25,6 @@
 <script>
 
 import roomData from './assets/oneroom.js'
-import headertest from './layouts/header.vue'
-
 
 export default {
   name: 'App',
@@ -40,7 +34,7 @@ export default {
       rooms : roomData,
       modalIsOpen : false,
       // accuseCount : [0, 0, 0],
-      menu : ['home', 'shop', 'about', 'board'],
+      menu : ['/home', '/shop', '/about', '/board'],
       /*
       products : [
           {
@@ -59,16 +53,6 @@ export default {
       */
     }
   },
-  routes: [
-    {
-      path: 'home',
-      component: 'App'
-    },
-    {
-      path: 'shop',
-      component: 'header'
-    }
-  ],
   /*
   methods: {
     increase(i){
@@ -76,9 +60,7 @@ export default {
     }
   },
   */
-
   components: {
-    'header' : headertest
   }
 }
 </script>
@@ -127,7 +109,6 @@ div {
 .menu a {
   color: white;
   padding: 10px;
-  text-align: center;
 }
 
 </style>
