@@ -1,11 +1,19 @@
 <template>
   <div>
     <header></header>
+  <router-view></router-view>
+
+    <div class="black-bg" @click="modalIsOpen = false" v-if="modalIsOpen == true">
+      <div class="white-bg">
+        <h4>상세페이지</h4>
+        <p>상세페이지 내용</p>
+      </div>
+    </div>
     <div class="menu">
       <router-link :to="a" v-for="a in menu" :key="a" >{{a}}</router-link>
       <!-- key는 반복문 돌린 요소를 컴퓨터가 구분하기 위해 쓴다. -->
     </div>
-    <!-- <router-view> -->
+    
       
       <div v-for="(product,i) in rooms" :key="i">
         <img :src="rooms[i].image" @click="modalIsOpen = true" class="room-img">
@@ -13,14 +21,9 @@
         <p>{{rooms[i].price}} 원</p>
         <!-- <button v-on:click="increase(i)">허위매물신고</button> <span>신고수 : {{ accuseCount[i] }}</span> -->
         <!-- v-on:click 또는 @click으로도 가능 --> 
-      </div>
-      <div class="black-bg" @click="modalIsOpen = false" v-if="modalIsOpen == true">
-        <div class="white-bg">
-          <h4>상세페이지</h4>
-          <p>상세페이지 내용</p>
-        </div>
-      </div>
-    <!-- </router-view> -->
+    </div>
+
+    
 </div>
 </template>
 
@@ -29,7 +32,7 @@
 <script>
 
 import roomData from './assets/oneroom.js'
-import headertest from './layouts/header.vue'
+import header from './layouts/header.vue'
 
 
 export default {
@@ -54,21 +57,12 @@ export default {
           {
             roomName : '마포구원룸',
             image : require('./assets/room2.jpg')
-          },
+          },\
         ] 
       */
     }
   },
-  routes: [
-    {
-      path: 'home',
-      component: 'App'
-    },
-    {
-      path: 'shop',
-      component: 'header'
-    }
-  ],
+
   /*
   methods: {
     increase(i){
@@ -77,8 +71,8 @@ export default {
   },
   */
 
-  components: {
-    'header' : headertest
+  component: {
+    'header' : header
   }
 }
 </script>

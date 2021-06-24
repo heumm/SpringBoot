@@ -1,7 +1,7 @@
 <template>
 
     <div>
-        test
+        tests
     </div>
 
 </template>
