@@ -1,14 +1,11 @@
 <template>
-
     <div>
-        tests
+        <h1>testsfsdfafsfasfdsa</h1>
     </div>
-
 </template>
 
 
 <script>
 export default {
-
 }
 </script>
