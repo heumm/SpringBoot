@@ -19,7 +19,7 @@
 
 <script>
 // @ is an alias to /src
-import roomData from '@/assets/oneroom.js'
+import RoomData from '@/assets/oneroom.js'
 
 
 export default {
@@ -27,7 +27,7 @@ export default {
   data(){
     return{  
       //react에서는 state라고도 부른다.
-      rooms : roomData,
+      rooms : RoomData,
       modalIsOpen : false,
       // accuseCount : [0, 0, 0],
       
