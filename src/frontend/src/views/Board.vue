@@ -3,7 +3,7 @@
         <h1>Board</h1>
         <table>
             <tr>
-                <td>{{usergit}}</td>
+                <td>{{test}}</td>
             </tr>
 
         </table>
@@ -13,33 +13,32 @@
 
 
 <script>
-// import usergitdata from '@/assets/gitdata.js'
 
 
-// import Vue from 'https://unpkg.com/vue'
-// url (required), options (optional)
-// fetch('https://api.github.com/users/heumm', {
-//     method: 'get'
-// }).then(function(response) {
-//     // console.log(response)
-//     response.json()
-// }).then((data) => console.log(data))
-// .catch(function(err) {
-//     // Error :(
-//         console.log("error:(")
-// });
-fetch('https://api.github.com/users/heumm', {
+var datas = fetch('https://api.github.com/users/heumm', {
     method: 'get'
-}).then((response) => response.json())
-.then((data) => console.log(data))
+}).then(response => response.json())
+.then(data => {
+    // console.log(data);
+    test(data);
+    return datas;
+})
 .catch(function(err) {
     // Error :(
         console.log("error:(")
 });
+
+var test = function(param){
+    for (var key in param) {
+        if(param.hasOwnProperty(key))
+        console.log(`${key}: ${param[key]}`);
+    }
+}
  
 export default {
     data() {
         return {
+            test: datas
         }
     },
 }
