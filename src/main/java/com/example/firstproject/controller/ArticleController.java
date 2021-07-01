@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @Slf4j  //로깅을 위한 어노테이션
@@ -21,7 +22,8 @@ public class ArticleController {
         return "articles/new";
     }
 
-    @PostMapping("/articles/create")
+    @PostMapping("/board/new/create")
+    @ResponseBody
     public String createArticle(ArticleForm form) {
         log.info(form.toString());
 //        System.out.println(form.toString()); -> 로깅으로 대체
@@ -34,6 +36,7 @@ public class ArticleController {
         Article saved = articleRepository.save(article);
         log.info(saved.toString());
 //        System.out.println(saved.toString()); -> 로깅으로 대체
+        
         return "";
     }
 

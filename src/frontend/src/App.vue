@@ -19,9 +19,9 @@ export default {
   name: 'App',
   data(){
     return{
-      menu : ['home', 'shop', 'about', 'board']
+      menu : ['home', 'shop', 'about', 'board'],
     }
-  }
+  },
 
 }
 </script>
