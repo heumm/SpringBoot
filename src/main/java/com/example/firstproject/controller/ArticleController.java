@@ -22,7 +22,7 @@ public class ArticleController {
         return "articles/new";
     }
 
-    @PostMapping("/board/new/create")
+    @PostMapping("/create")
     @ResponseBody
     public String createArticle(ArticleForm form) {
         log.info(form.toString());
@@ -36,7 +36,7 @@ public class ArticleController {
         Article saved = articleRepository.save(article);
         log.info(saved.toString());
 //        System.out.println(saved.toString()); -> 로깅으로 대체
-        
+
         return "";
     }
 
