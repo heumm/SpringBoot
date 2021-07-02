@@ -3,7 +3,7 @@
   
 
   <div class="menu">
-    <router-link :to="a" v-for="a in menu" :key="a" >{{a}}</router-link>
+    <router-link :to="'/'+a" v-for="a in menu" :key="a" >{{a}}</router-link>
     <!-- key는 반복문 돌린 요소를 컴퓨터가 구분하기 위해 쓴다. -->
   </div>
 <router-view/>
