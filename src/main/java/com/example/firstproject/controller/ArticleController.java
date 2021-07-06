@@ -26,7 +26,7 @@ public class ArticleController {
     public String newArticleForm() {
         return "articles/new";
     }
- 
+
     @PostMapping("/create")
     @ResponseBody
     public String createArticle(@RequestBody ArticleForm form) {
