@@ -21,8 +21,10 @@ export default {
     mounted: 
       function(){
           axios.get('https://api.github.com/users/heumm').then(res => {
-          console.log(res);
-          this.datas = res.data;
+            console.log(res);
+            this.datas = res.data;
+          }).catch(err => {
+              console.log(err);
           })
     },
 }
