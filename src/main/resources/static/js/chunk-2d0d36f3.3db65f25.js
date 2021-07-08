@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d36f3"],{"5d6d":function(t,n,e){"use strict";e.r(n);var r=e("7a23"),u=Object(r["g"])("h1",null,"Board",-1),c=Object(r["f"])("새 게시물 만들기");function d(t,n,e,d,a,o){var b=Object(r["u"])("router-link");return Object(r["p"])(),Object(r["d"])("div",null,[u,Object(r["g"])(b,{to:"/board/new",tag:"button"},{default:Object(r["A"])((function(){return[c]})),_:1})])}var a={name:"Board"};a.render=d;n["default"]=a}}]);
+//# sourceMappingURL=chunk-2d0d36f3.3db65f25.js.map

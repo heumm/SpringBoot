@@ -13,11 +13,11 @@ import org.springframework.web.servlet.view.RedirectView;
 @Slf4j
 public class FirstController {
 
-    @GetMapping("/home")
-    public String home() {
-        log.info("home controller home()메소드 호출!");
-        return "";
-    }
+//    @GetMapping("/home")
+//    public String home() {
+//        log.info("home controller home()메소드 호출!");
+//        return "";
+//    }
 
 
 //    @GetMapping("/hi")
